@@ -1,0 +1,75 @@
+ 
+
+<form [formGroup]="service.form" class="normal-form">
+<mat-grid-list cols="2" rowHeight="2:1" rowHeight="500px">
+  <mat-grid-tile>
+    <div class="controles-container">
+      <input type="hidden" formControlName="code">
+      <mat-form-field>
+        <input formControlName="libelle" matInput placeholder="Emploi*">
+        <mat-error> Vérifier l'emploi. </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="filiereAct" matInput placeholder="Filière d'activité*">
+        <mat-error>Vérifier le filière d'activité. </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+          <input formControlName="famille" matInput placeholder="Famille*">
+          <mat-error >Vérifier la famille.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+          <input formControlName="finaliteEmploi" matInput placeholder="Finalité de l'emploi*">
+          <mat-error >Vérifier les finalités de l'emploi.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="mission" matInput placeholder="Missions*">
+        <mat-error>Vérifier les missions de l'emploi.</mat-error>
+      </mat-form-field>
+  </div>
+  </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="controles-container">
+      <mat-form-field>
+          <input formControlName="nivInstruction" matInput placeholder="Niveau d'instruction*">
+          <mat-error>Vérifier le niveau d'instruction.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input formControlName="nivExigence" matInput placeholder="Niveau d'exigence*">
+        <mat-error>Vérifier le niveau d'exigence.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="dateCreation" matInput [matDatepicker]="creation" placeholder="Date de création*">
+      <mat-datepicker-toggle matSuffix [for]="creation"></mat-datepicker-toggle>
+      <mat-datepicker #creation></mat-datepicker>
+      <mat-error>vérifier la date de création.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="signataireDC" matInput placeholder="signataire*">
+      <mat-error>Verifier le signataire.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input formControlName="dateValidation" matInput [matDatepicker]="validation" placeholder="Date de validation*">
+        <mat-datepicker-toggle matSuffix [for]="validation"></mat-datepicker-toggle>
+        <mat-datepicker #validationt></mat-datepicker>
+        <mat-error>Vérifier la date de validation.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input formControlName="signataireDV" matInput placeholder="signataire*">
+        <mat-error>Verifier le signataire.</mat-error>
+      </mat-form-field>
+      
+        <div class="button-row"> 
+          <button mat-raised-button color="primary" type="submit" [disabled]="service.form.invalid">Submit</button>
+          <button mat-raised-button color="warm" (click)="onClear()">Clear</button>
+        </div>
+
+
+      </div>
+    
+
+  </mat-grid-tile>
+  
+
+</mat-grid-list>
+
+</form>

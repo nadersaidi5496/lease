@@ -1,0 +1,69 @@
+<mat-horizontal-stepper  #stepper>
+    <mat-step >
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Informations</ng-template>
+        
+         <app-information-emploi></app-information-emploi>
+        
+        <div>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button routerLink="/emplois">Annuler</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Savoirs</ng-template>
+        <app-savoir-emploi></app-savoir-emploi>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button routerLink="/emplois">Annuler</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Savoir-faire</ng-template>
+        <app-savoir-faire-emploi></app-savoir-faire-emploi>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button routerLink="/emplois">Annuler</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form [formGroup]="forthFormGroup">
+        <ng-template matStepLabel>Savoir-être</ng-template>
+        <app-savoir-etre-emploi></app-savoir-etre-emploi>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button routerLink="/emplois">Annuler</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <form [formGroup]="fifthFormGroup">
+          <ng-template matStepLabel>Moyens</ng-template>
+          <app-moyens-emploi></app-moyens-emploi>
+          <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+              <button mat-button routerLink="/emplois">Annuler</button>
+            </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button routerLink="/emplois">Annuler</button>
+        <button mat-button routerLink="/emplois">Fin</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+

@@ -1,0 +1,135 @@
+<mat-toolbar id="mainToolbar" color="primary">
+  <mat-icon
+    (click)="onToolbarMenuToggle()"
+    id="toolbarMenu">subject</mat-icon>
+  Arab International Lease
+  <span class="toolbar-spacer"></span>
+  
+</mat-toolbar>
+
+<mat-sidenav-container
+  id="sidenavContainer"
+ fullscreen>
+  <mat-sidenav
+    mode="side"
+    #sidenav
+    id="sidenav"
+    [class.menu-open]="isMenuOpen"
+    [class.menu-close]="!isMenuOpen"
+    opened>
+    
+    <mat-list id="menus">
+      <mat-card>
+        <mat-card-header>
+          <div 
+            mat-card-avatar 
+            class="avatar"></div>
+
+          <mat-card-title>John Doe</mat-card-title>
+          <mat-card-subtitle>Internal</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+      <mat-list-item>
+        <button routerLink="/employes" 
+        class="menu-item"
+          mat-flat-button>
+          <mat-icon>person</mat-icon>
+        Employé</button>
+      </mat-list-item>
+    
+
+      <mat-list-item>
+          <button routerLink="/emplois" 
+          class="menu-item"
+            mat-flat-button>
+            <mat-icon>work</mat-icon>
+          Emploi</button>
+        </mat-list-item>
+
+        <mat-list-item>
+            <button routerLink="/savoirFaire" 
+            class="menu-item"
+              mat-flat-button>
+              <mat-icon>assignment</mat-icon>
+            Savoir-faire</button>
+          </mat-list-item>
+
+          <mat-list-item>
+              <button routerLink="/savoirEtre" 
+              class="menu-item"
+                mat-flat-button>
+                <mat-icon>assignment</mat-icon>
+              Savoir-être</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button routerLink="/savoir" 
+                class="menu-item"
+                  mat-flat-button>
+                  <mat-icon>assignment</mat-icon>
+                Savoirs</button>
+              </mat-list-item>
+
+              <mat-list-item>
+                <button routerLink="/moyens" 
+                class="menu-item"
+                  mat-flat-button>
+                  <mat-icon>build</mat-icon>
+                Resources</button>
+              </mat-list-item>
+              
+              
+
+                <mat-list-item>
+                    <button routerLink="/evaluation"  
+                    class="menu-item"
+                      mat-flat-button>
+                      <mat-icon>build</mat-icon>
+                    Evaluation</button>
+                  </mat-list-item>
+
+
+                  <mat-list-item>
+                    <button routerLink="/listeProfil" 
+                    class="menu-item"
+                      mat-flat-button>
+                      <mat-icon>build</mat-icon>
+                    Profil</button>
+                  </mat-list-item>
+                 
+
+                    <mat-list-item>
+                        <button routerLink="/matricePotentiel" 
+                        class="menu-item"
+                          mat-flat-button>
+                          <mat-icon>build</mat-icon>
+                        Matrice de potentiel</button>
+                      </mat-list-item>
+
+
+                      <mat-list-item>
+                        <button routerLink="/matriceDepart" 
+                        class="menu-item"
+                          mat-flat-button>
+                          <mat-icon>build</mat-icon>
+                        Matrice de départ</button>
+                      </mat-list-item>
+
+
+     
+
+        
+
+        
+
+    </mat-list>
+    
+  </mat-sidenav>
+
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+
+</mat-sidenav-content>
+ 
+</mat-sidenav-container>

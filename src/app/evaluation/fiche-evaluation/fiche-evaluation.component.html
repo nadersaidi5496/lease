@@ -1,0 +1,152 @@
+
+<mat-horizontal-stepper  #stepper>
+    <mat-step >
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Informations</ng-template>
+        <h3>Nom: {{employe.nom}}</h3>
+        <h3>Prenom {{employe.prenom}}</h3>
+        <h3>Diplome{{employe.Diplome}}</h3>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button routerLink="/evaluation">Annuler</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Savoirs</ng-template>
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+            
+              <!-- Position Column -->
+              <ng-container matColumnDef="Savoir">
+                <th mat-header-cell *matHeaderCellDef> Savoir </th>
+                <td mat-cell *matCellDef="let element"> {{element.Savoir}} </td>
+              </ng-container>
+            
+              <!-- Name Column -->
+              <ng-container matColumnDef="NoteMin">
+                <th mat-header-cell *matHeaderCellDef> Note Min </th>
+                <td mat-cell *matCellDef="let element"> {{element.NoteMin}} </td>
+              </ng-container>
+            
+              <!-- Weight Column -->
+              <ng-container matColumnDef="NoteAuto">
+                <th mat-header-cell *matHeaderCellDef> Auto-Evaluation </th>
+                <td mat-cell *matCellDef="let element"> {{element.NoteAuto}} </td>
+              </ng-container>
+            
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="NoteEvaluateur">
+                <th mat-header-cell *matHeaderCellDef> note Evaluateur </th>
+                <td mat-cell *matCellDef="let element"> {{element.NoteEvaluateur}} </td>
+              </ng-container>
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button routerLink="/evaluation">Annuler</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Savoir-faire</ng-template>
+        <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="Savoir">
+              <th mat-header-cell *matHeaderCellDef> Savoir </th>
+              <td mat-cell *matCellDef="let element"> {{element.Savoir}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="NoteMin">
+              <th mat-header-cell *matHeaderCellDef> Note Min </th>
+              <td mat-cell *matCellDef="let element"> {{element.NoteMin}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="NoteAuto">
+              <th mat-header-cell *matHeaderCellDef> Auto-Evaluation </th>
+              <td mat-cell *matCellDef="let element"> {{element.NoteAuto}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="NoteEvaluateur">
+              <th mat-header-cell *matHeaderCellDef> note Evaluateur </th>
+              <td mat-cell *matCellDef="let element"> {{element.NoteEvaluateur}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+       
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button routerLink="/evaluation">Annuler</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step >
+      <form [formGroup]="forthFormGroup">
+        <ng-template matStepLabel>Savoir-être</ng-template>
+        <table mat-table [dataSource]="dataSource3" class="mat-elevation-z8">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="Savoir">
+              <th mat-header-cell *matHeaderCellDef> Savoir </th>
+              <td mat-cell *matCellDef="let element"> {{element.Savoir}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="NoteMin">
+              <th mat-header-cell *matHeaderCellDef> Note Min </th>
+              <td mat-cell *matCellDef="let element"> {{element.NoteMin}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="NoteAuto">
+              <th mat-header-cell *matHeaderCellDef> Auto-Evaluation </th>
+              <td mat-cell *matCellDef="let element"> {{element.NoteAuto}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="NoteEvaluateur">
+              <th mat-header-cell *matHeaderCellDef> note Evaluateur </th>
+              <td mat-cell *matCellDef="let element"> {{element.NoteEvaluateur}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+          <button mat-button routerLink="/evaluation">Annuler</button>
+        </div>
+      </form>
+    </mat-step>
+    
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+        <button mat-button routerLink="/emplois">Annuler</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper> 
