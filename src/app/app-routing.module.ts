@@ -14,62 +14,72 @@ import{FicheEntrepriseComponent} from './fiche-entreprise/fiche-entreprise.compo
 import {MatricePotentielComponent} from './matrice-potentiel/matrice-potentiel.component';
 import {MatriceDepartComponent} from './matrice-depart/matrice-depart.component';
 import {ProfilListComponent} from './fiche-profil/profil-list/profil-list.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 const routes: Routes = [
-  
   {
-    path: 'employes' ,
-    component: EmployeesComponent,
-  } ,
-  
-  {
-    path : 'emplois' ,
-    component : EmploisComponent,
-  } ,
-  {
-    path: 'emploi' ,
-    component: EmploiComponent
+    path: '', component: HomeComponent,
+    children : [
+      {
+        path: 'employes' ,
+        component: EmployeesComponent,
+      } ,
+      
+      {
+        path : 'emplois' ,
+        component : EmploisComponent,
+      } ,
+      {
+        path: 'emploi' ,
+        component: EmploiComponent
+      },
+      {
+        path: 'savoirFaire',
+        component: SavoirFaireComponent,
+      },
+      {
+        path: 'savoirEtre',
+        component: SavoirEtreComponent,
+      },
+      {
+        path: 'savoir',
+        component: SavoirComponent,
+      },
+      {
+        path: 'moyens',
+        component: MoyensComponent ,
+      },
+      {path: 'fihceEvaluation/:cin',
+      component: FicheEvaluationComponent,
+      },
+     { 
+       path: 'evaluation',
+      component: EvaluationComponent,},
+      {
+        path: 'profil',
+       component: FicheProfilComponent,
+      },
+      {
+        path : 'ficheEntreprise',
+        component: FicheEntrepriseComponent ,
+      },
+      {
+        path: 'matricePotentiel',
+        component: MatricePotentielComponent,
+      },
+      {
+        path: 'matriceDepart',
+        component: MatriceDepartComponent,
+      },
+      {
+        path : 'listeProfil',
+        component: ProfilListComponent,
+      }
+    ]
   },
   {
-    path: 'savoirFaire',
-    component: SavoirFaireComponent,
-  },
-  {
-    path: 'savoirEtre',
-    component: SavoirEtreComponent,
-  },
-  {
-    path: 'savoir',
-    component: SavoirComponent,
-  },
-  {
-    path: 'moyens',
-    component: MoyensComponent ,
-  },
-  {path: 'fihceEvaluation/:cin',
-  component: FicheEvaluationComponent,
-  },
- { 
-   path: 'evaluation',
-  component: EvaluationComponent,},
-  {
-    path: 'profil',
-   component: FicheProfilComponent,
-  },
-  {
-    path : 'ficheEntreprise',
-    component: FicheEntrepriseComponent ,
-  },
-  {
-    path: 'matricePotentiel',
-    component: MatricePotentielComponent,
-  },
-  {
-    path: 'matriceDepart',
-    component: MatriceDepartComponent,
-  },
-  {
-    path : 'listeProfil',
-    component: ProfilListComponent,
+    path:'login',
+    component: LoginComponent
   }
   
 
