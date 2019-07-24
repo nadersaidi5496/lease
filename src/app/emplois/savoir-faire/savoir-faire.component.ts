@@ -21,7 +21,7 @@ export class SavoirFaireComponent implements OnInit {
     this.savoirService.getSavoirs("SavoirFaire")
     .subscribe((data =>{
       this.dataSource=data;
-    }))
+    }));
     
   }
 

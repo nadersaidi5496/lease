@@ -47,7 +47,7 @@ export class EvaluationComponent implements OnInit {
 
      onSelect(row) {
       //  this.employeeService.form.setValue(row);
-       this.router.navigate(['/fihceEvaluation', row.cin]);
+       this.router.navigate(['/ficheEval', row.cin]);
 
      }
   }

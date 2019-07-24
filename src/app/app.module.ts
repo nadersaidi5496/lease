@@ -36,11 +36,9 @@ import { SavoirEmploiComponent } from './emplois/emploi/savoir-emploi/savoir-emp
 import { MoyensEmploiComponent } from './emplois/emploi/moyens-emploi/moyens-emploi.component';
 import { MoyensComponent } from './emplois/moyens/moyens.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
-import { FicheEvaluationComponent } from './evaluation/fiche-evaluation/fiche-evaluation.component';
 import { FicheProfilComponent } from './fiche-profil/fiche-profil.component';
 import { DatePipe } from '@angular/common';
 import { TableModule } from 'primeng/table';
-import { InformationEvaluationComponent } from './evaluation/fiche-evaluation/information-evaluation/information-evaluation.component';
 import { FicheEntrepriseComponent } from './fiche-entreprise/fiche-entreprise.component';
 import { MatricePotentielComponent } from './matrice-potentiel/matrice-potentiel.component';
 import { MatriceDepartComponent } from './matrice-depart/matrice-depart.component';
@@ -49,7 +47,12 @@ import {DropdownModule} from 'primeng/dropdown';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-
+import { FicheEvalComponent } from './evaluation/fiche-eval/fiche-eval.component';
+import { SavoiretreComponent } from './evaluation/fiche-eval/savoiretre/savoiretre.component';
+import { InfoComponent } from './evaluation/fiche-eval/info/info.component';
+import { SavoirFaireEvaluationComponent } from './evaluation/fiche-eval/savoir-faire-evaluation/savoir-faire-evaluation.component';
+import { SavoirEvaluationComponent } from './evaluation/fiche-eval/savoir-evaluation/savoir-evaluation.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -72,15 +75,18 @@ import { HomeComponent } from './home/home.component';
     MoyensEmploiComponent,
     MoyensComponent,
     EvaluationComponent,
-    FicheEvaluationComponent,
     FicheProfilComponent,
-    InformationEvaluationComponent,
     FicheEntrepriseComponent,
     MatricePotentielComponent,
     MatriceDepartComponent,
     ProfilListComponent,
     LoginComponent,
     HomeComponent,
+    FicheEvalComponent,
+    SavoiretreComponent,
+    InfoComponent,
+    SavoirFaireEvaluationComponent,
+    SavoirEvaluationComponent
     
     
   
@@ -112,16 +118,8 @@ import { HomeComponent } from './home/home.component';
     MatTableModule,
     PaginatorModule,
     DropdownModule,
-    MatAutocompleteModule
-
-    
-    
-   
-   
-  
-  
-
-    
+    MatAutocompleteModule,
+    MatSelectModule
   ],
   providers: [EmployeeService, DatePipe],
   bootstrap: [AppComponent],

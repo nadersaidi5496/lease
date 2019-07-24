@@ -1,24 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SavoirService } from 'src/app/shared/savoir.service';
+import { Savoir } from 'src/app/model/savoir';
+// export class ListSavoir {
+//   value: number;
+//   title: string;
+//   // tslint:disable-next-line: align
+//   constructor(id: number, title: string){
+//     this.value = id;
+//     this.title = title;
+//   }
+// }
 @Component({
   selector: 'app-savoir-faire-emploi',
   templateUrl: './savoir-faire-emploi.component.html',
   styleUrls: ['./savoir-faire-emploi.component.css']
 })
 export class SavoirFaireEmploiComponent implements OnInit {
+  constructor(private service: SavoirService) { }
 
-  listeSavoirFaire = [
-    { value: 'Applicatifs bureautiques dédiés ', title: 'Applicatifs bureautiques dédiés ' },
-     { value: 'Architectures informatiques ', title: 'Architectures informatiques ' },
-     { value: 'Bases de données et logiciels dédiés ', title: 'Bases de données et logiciels dédiés ' },
-   ];
-   data = [
-    {},
-  ];
-  constructor() { }
+  listeSavoirFaire: any[]= [];
+  data: Savoir[]= [];
 
   ngOnInit() {
+    setTimeout(() =>{
+      this.chargerSavoirFaire();
+    }, 3000);
+    this.settings = Object.assign({},this.settings);
+    // console.log(this.data);
+    // for (var sav of this.data){
+    //   console.log(sav);
+    //   this.listeSavoirFaire.push(new ListSavoir(sav.idSv, sav.libelle));
+    //   console.log(this.listeSavoirFaire);
+    // }
+    // this.settings.columns.savoirFaire.editor.config.list = this.listeSavoirFaire;
+    console.log(this.listeSavoirFaire);
+
   }
+
+  // listeSavoirFaire = [
+  //   { value: 'Applicatifs bureautiques dédiés ', title: 'Applicatifs bureautiques dédiés ' },
+  //    { value: 'Architectures informatiques ', title: 'Architectures informatiques ' },
+  //    { value: 'Bases de données et logiciels dédiés ', title: 'Bases de données et logiciels dédiés ' },
+  //  ];
   settings = {
     add: {
       addButtonContent: '<i  class="material-icons">add</i>',
@@ -95,5 +118,25 @@ export class SavoirFaireEmploiComponent implements OnInit {
      
     },
   };
+
+
+
+  chargerSavoirFaire(){
+    this.service.getSavoirs('SavoirFaire').subscribe( res =>{
+      this.data = res;
+      res.forEach(sav =>{
+        this.listeSavoirFaire.push({value: sav.idSv, title: sav.libelle});
+      });
+    }
+      );
+      
+      // this.data = res;
+      // console.log(res);
+      // for (let sav of ) {
+      //   console.log(sav);
+      //   this.listeSavoirFaire.push(new ListSavoir(sav.idSv, sav.libelle));
+      //   console.log(this.listeSavoirFaire);
+      // }
+  }
 
 }

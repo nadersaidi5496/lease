@@ -80,7 +80,7 @@ OnSubmit(){
    
 
    if (this.service.form.controls['cin'].value){
-      this.service.addEmploye(this.employe).subscribe(res=>{
+      this.service.addEmploye(this.employe).subscribe(res => {
       this.service.initializeFormGroup();
       this.onClose();
     });

@@ -1,102 +1,102 @@
 <!--Generer la fiche profil-->
 <mat-toolbar>
-  <span>Fiche Profil</span>
+    <span>Fiche Profil</span>
 </mat-toolbar>
- 
-<form [formGroup]="service.form" class="formGroup">
-<mat-grid-list cols="2" rowHeight="1000px"  rowlength="1200px">
-  <mat-grid-tile>
-    <div class="controles-container">
-      <input type="hidden" formControlName="cin">
-      <mat-form-field>
-          <mat-label>Nom</mat-label>
-        <input formControlName="nom" matInput placeholder="Nom*">
-        <mat-error> Vérifier le Nom. </mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <input formControlName="prenom" matInput placeholder="Prenom*">
-        <mat-error>Vérifier le Prenom. </mat-error>
-      </mat-form-field>
-     
-      <mat-form-field>
-            <input formControlName="diplome" matInput placeholder="Diplôme*">
-            <mat-error>Vérifier le diplôme.</mat-error>
-      </mat-form-field>
-   
-      <mat-form-field>
-          <input formControlName="nivInstruction" matInput placeholder="Niveau d'instruction*">
-          <mat-error>Vérifier le niveau d'instruction.</mat-error>
-    </mat-form-field>
- 
-    <mat-form-field>
-      <input formControlName="emploi" matInput placeholder="Emploi*">
-      <mat-error>Verifier l'emploi.</mat-error>
-    </mat-form-field>
-  
-    
-    <mat-form-field>
-        <input formControlName="sexe" matInput placeholder="Sexe">
-    </mat-form-field>
-  
 
-  <mat-toolbar>
-    <span>Potentiel/Performance</span>
-  </mat-toolbar>
-  <p><label>Potentiel</label></p>
-  <select formControlName="potentiel">
+<form [formGroup]="service.form" class="formGroup">
+    <mat-grid-list cols="2" rowHeight="1000px" rowlength="1200px">
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName="cin">
+                <mat-form-field>
+                    <mat-label>Nom</mat-label>
+                    <input formControlName="nom" matInput placeholder="Nom*">
+                    <mat-error> Vérifier le Nom. </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="prenom" matInput placeholder="Prenom*">
+                    <mat-error>Vérifier le Prenom. </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName="diplome" matInput placeholder="Diplôme*">
+                    <mat-error>Vérifier le diplôme.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName="nivInstruction" matInput placeholder="Niveau d'instruction*">
+                    <mat-error>Vérifier le niveau d'instruction.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName="emploi" matInput placeholder="Emploi*">
+                    <mat-error>Verifier l'emploi.</mat-error>
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <input formControlName="sexe" matInput placeholder="Sexe">
+                </mat-form-field>
+
+
+                <mat-toolbar>
+                    <span>Potentiel/Performance</span>
+                </mat-toolbar>
+                <p><label>Potentiel</label></p>
+                <select formControlName="potentiel" class="form-control">
     <option value="Faible">Faible</option>
     <option value="Moyenne">Moyenne</option>
     <option value="Fort">Forte</option>
   </select>
-  
-   
-   <p><label>Performance</label></p>
-    <select formControlName="perfermance">
+
+
+                <p><label>Performance</label></p>
+                <select formControlName="perfermance" class="form-control">
       <option value="Faible">Faible</option>
       <option value="Moyenne">Moyenne</option>
       <option value="Fort">Forte</option>
     </select>
-  
-  <mat-form-field>
-    <input formControlName="readiness" matInput placeholder="Readiness">
-  </mat-form-field>
-  <mat-toolbar>
-    <span>Risque de Départ</span>
-  </mat-toolbar>
-  <p><label>Probabilite</label></p>
-    <select formControlName="probabilite">
+
+                <mat-form-field>
+                    <input formControlName="readiness" matInput placeholder="Readiness">
+                </mat-form-field>
+                <mat-toolbar>
+                    <span>Risque de Départ</span>
+                </mat-toolbar>
+                <p><label>Probabilite</label></p>
+                <select formControlName="probabilite" class="form-control">
       <option value="Faible">Faible</option>
       <option value="Moyenne">Moyenne</option>
       <option value="Fort">Forte</option>
     </select>
-     
 
-    <p><label> Impact   </label></p>
-    <select formControlName="impact">
+
+                <p><label> Impact   </label></p>
+                <select formControlName="impact" class="form-control">
       <option value="Faible">Faible</option>
       <option value="Moyenne">Moyenne</option>
       <option value="Fort">Forte</option>
     </select>
-  <mat-form-field>
-    <input formControlName="motif" matInput placeholder="Motif">
-  </mat-form-field>
-  
-  
-     
-    
-        
-        <div class="button-row"> 
-          <button mat-raised-button color="primary" type="submit" (click)=onSubmit()>Submit</button>
-          <button mat-raised-button color="warm" (click)="onClear()">Clear</button>
-        </div>
+                <mat-form-field>
+                    <input formControlName="motif" matInput placeholder="Motif">
+                </mat-form-field>
 
 
 
-    </div>
 
-  </mat-grid-tile>
-  
 
-</mat-grid-list>
+                <div class="button-row">
+                    <button mat-raised-button color="primary" type="submit" (click)=onSubmit()>Submit</button>
+                    <button mat-raised-button color="warm" (click)="onClear()">Clear</button>
+                </div>
+
+
+
+            </div>
+
+        </mat-grid-tile>
+
+
+    </mat-grid-list>
 
 </form>

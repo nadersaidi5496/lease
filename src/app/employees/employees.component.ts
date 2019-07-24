@@ -69,8 +69,11 @@ export class EmployeesComponent implements OnInit {
       });
     }
     onDelete(cin){
-      
-          this.employeeService.deleteEmploye(cin);}
+      console.log(cin);
+          this.employeeService.deleteEmploye(cin).subscribe(res =>{
+            this.chargeData();
+          });
+        }
         
       
     

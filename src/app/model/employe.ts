@@ -45,7 +45,7 @@ export class Employe {
         probabilite: string,
         impact: string,
         motif: string,
-        evaluateur : Employe,
+        evaluateur : Employe
     ){
         this.cin = cin;
         this.nom = nom;

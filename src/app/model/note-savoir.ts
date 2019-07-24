@@ -1,22 +1,27 @@
+import { Employe } from './employe';
+
 export class NoteSavoir {
-    id: number;
+    ntS: number;
     libelle: string;
     type: string;
-    noteAutoEvaluation: number ;
-    noteEvaluateur: number;
+    noteAutoEvaluation: string ;
+    noteEvaluateur: string;
+    employe: Employe;
 
-    constructor(id: number,
+    constructor(ntS: number,
         libelle: string,
         type: string,
-        noteAutoEvaluation: number ,
-        noteEvaluateur: number){
+        noteAutoEvaluation: string ,
+        noteEvaluateur: string,
+        employe: Employe){
 
 
-            this.id = id;
+            this.ntS = ntS;
             this.libelle= libelle;
             this.type=type;
             this.noteAutoEvaluation= noteAutoEvaluation ;
             this.noteEvaluateur= noteEvaluateur;
+            this.employe = employe;
 
     }
 }

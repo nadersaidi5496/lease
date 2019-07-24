@@ -12,7 +12,7 @@ export class FicheProfilComponent implements OnInit {
   public employe : Employe;
 
   constructor(private service:EmployeeService ,
-    private route: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     let id = parseInt(this.route.snapshot.paramMap.get('cin'));
@@ -43,9 +43,12 @@ export class FicheProfilComponent implements OnInit {
     this.service.form.controls['probabilite'].value,
     this.service.form.controls['impact'].value,
     this.service.form.controls['motif'].value,
-    this.service.form.controls['evaluateur'].value,);
-
-    this.service.updateEmploye(this.employe.cin, this.employe);
+    this.service.form.controls['evaluateur'].value
+    );
+  console.log(this.employe);
+  this.service.updateEmploye(this.employe.cin, this.employe).subscribe(res=>{
+    console.log(res);
+  });
 
   }
  chargerForm(){

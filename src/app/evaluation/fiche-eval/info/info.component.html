@@ -1,0 +1,91 @@
+<form [formGroup]="service.form" class="normal-form" aria-disabled="true">
+    <mat-grid-list cols="2" rowHeight="1200px" rowHeight="2:2" rowlength="600px">
+        <mat-grid-tile>
+            <div class="controles-container">
+
+                <mat-form-field>
+                    <input formControlName='nom' matInput placeholder="Nom*">
+                    <mat-error> Vérifier le Nom. </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName='prenom' matInput placeholder="Prenom*">
+                    <mat-error>Vérifier le Prenom. </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName='mail' matInput placeholder="Email*">
+                    <mat-error *ngIf="service.form.controls['mail'].errors?.email">Forme d'adresse mail invalide.</mat-error>
+                    <mat-error *ngIf="service.form.controls['mail'].errors?.required">Vérifier l'adreese mail.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName='numTel' matInput placeholder="Telephone*">
+                    <mat-error *ngIf="service.form.controls['numTel'].errors?.required">Vérifier le numéro de télephone.</mat-error>
+                    <mat-error *ngIf="service.form.controls['numTel'].errors?.minlength"> Numéro de télephone invalide.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName='dateNaiss' matInput [matDatepicker]="date_naiss" placeholder="Date de naissance*">
+                    <mat-datepicker-toggle matSuffix [for]="date_naiss"></mat-datepicker-toggle>
+                    <mat-datepicker #date_naiss></mat-datepicker>
+                    <mat-error>vérifier la date de naissance.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName='diplome' matInput placeholder="Diplôme*">
+                    <mat-error>Vérifier le diplôme.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName='nivInstruction' matInput placeholder="Niveau d'instruction*">
+                    <mat-error>Vérifier le niveau d'instruction.</mat-error>
+                </mat-form-field>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container">
+                <mat-form-field>
+                    <input formControlName='adresse' matInput placeholder="Adresse*">
+                    <mat-error>Vérifier l'adresse.</mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName='cin' matInput placeholder="cin*">
+                    <mat-error> Vérifier le cin. </mat-error>
+                </mat-form-field>
+                <!-- <mat-form-field>
+      <input formControlName='emploi' matInput placeholder="Emploi*">
+      <mat-error>Verifier l'emploi.</mat-error>
+    </mat-form-field> -->
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Emploi" aria-label="Emploi" [matAutocomplete]="auto" formControlName="emploi">
+                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="getEmploiLibelle">
+                        <mat-option *ngFor="let emps of emplois" [value]="emps">
+                            {{emps.libelle}}
+                        </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input formControlName="dateRecru" matInput [matDatepicker]="daterecru" placeholder="Date de recrutement*">
+                    <mat-datepicker-toggle matSuffix [for]="daterecru"></mat-datepicker-toggle>
+                    <mat-datepicker #daterecru></mat-datepicker>
+                    <mat-error>Vérifier la date de recrutement.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="dateDep" matInput [matDatepicker]="date_dep" placeholder="Date de départ">
+                    <mat-datepicker-toggle matSuffix [for]="date_dep"></mat-datepicker-toggle>
+                    <mat-datepicker #date_dep></mat-datepicker>
+                </mat-form-field>
+
+                <div class="add-bottom-padding">
+                    <mat-radio-group formControlName='sexe'>
+                        <mat-radio-button value="Homme">Homme</mat-radio-button>
+                        <mat-radio-button value="Femme">Femme</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+
+        </mat-grid-tile>
+
+
+    </mat-grid-list>
+
+</form>

@@ -1,0 +1,57 @@
+<mat-horizontal-stepper #stepper>
+    <mat-step>
+        <form [formGroup]="firstFormGroup">
+            <ng-template matStepLabel>Informations</ng-template>
+
+            <app-info></app-info>
+
+            <div>
+                <button mat-button matStepperNext>Next</button>
+                <button mat-button routerLink="/evaluation">Annuler</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form [formGroup]="secondFormGroup">
+            <ng-template matStepLabel>Savoir-Faire</ng-template>
+            <app-savoir-faire-evaluation></app-savoir-faire-evaluation>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+                <button mat-button routerLink="/evaluation">Annuler</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Savoir-Etre</ng-template>
+            <app-savoiretre></app-savoiretre>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+                <button mat-button routerLink="/evaluation">Annuler</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <form [formGroup]="forthFormGroup">
+            <ng-template matStepLabel>Savoirs</ng-template>
+            <app-savoir-evaluation></app-savoir-evaluation>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+                <button mat-button routerLink="/evaluation">Annuler</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        You are now done.
+        <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button routerLink="/evaluation">Annuler</button>
+            <button mat-button routerLink="/evaluation">Fin</button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>

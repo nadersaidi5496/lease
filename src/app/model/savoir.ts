@@ -19,4 +19,6 @@ constructor(idSv: number , libelle: string ,niv1: string,niv2: string,niv3:strin
     this.niv5=niv5;
     this.type=type;
 }
+
+
 }

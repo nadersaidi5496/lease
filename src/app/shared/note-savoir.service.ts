@@ -15,15 +15,15 @@ export class NoteSavoirService {
     noteAutoEvaluation: new FormControl('', Validators.required),
     noteEvaluateur: new FormControl('', Validators.required),
   });
-  apiUrl='http://localhost:8080/';
+  apiUrl='http://localhost:8090/NoteSavoirApi/';
 
   constructor(private httpClient : HttpClient) { }
   initializeFormGroup(){
     this.form.reset();
  }; 
 
- public getNoteSavoir() : Observable<NoteSavoir[]> {
-  return this.httpClient.get<NoteSavoir[]>(this.apiUrl+'/Employees'); 
+ public getNoteSavoirByCinAndType(cin: string, type: string) : Observable<NoteSavoir[]> {
+  return this.httpClient.get<NoteSavoir[]>(this.apiUrl + 'NoteSavoir/' + cin + ',' + type);
 }
 public addEmploye (noteSavoir : NoteSavoir)  {
   return this.httpClient.post(this.apiUrl+'/', noteSavoir);
@@ -31,8 +31,8 @@ public addEmploye (noteSavoir : NoteSavoir)  {
 public deleteEmploye(id : number) {
   return this.httpClient.delete(this.apiUrl+'/'+ id);
 }
-public updateEmploye(id: number, noteSavoir: NoteSavoir){
-  return this.httpClient.put(this.apiUrl+'/'+ id,noteSavoir);
+public updateNoteSavoir(id: number, noteSavoir: NoteSavoir){
+  return this.httpClient.put(this.apiUrl+'/noteSavoir/'+ id,noteSavoir);
 }
 }
  

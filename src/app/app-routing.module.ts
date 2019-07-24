@@ -7,7 +7,6 @@ import {SavoirFaireComponent} from './emplois/savoir-faire/savoir-faire.componen
 import {SavoirEtreComponent} from './emplois/savoir-etre/savoir-etre.component';
 import {SavoirComponent} from './emplois/savoir/savoir.component';
 import {MoyensComponent} from './emplois/moyens/moyens.component' ;
-import {FicheEvaluationComponent} from './evaluation/fiche-evaluation/fiche-evaluation.component';
 import{FicheProfilComponent} from './fiche-profil/fiche-profil.component';
 import{EvaluationComponent} from './evaluation/evaluation.component';
 import{FicheEntrepriseComponent} from './fiche-entreprise/fiche-entreprise.component';
@@ -16,6 +15,7 @@ import {MatriceDepartComponent} from './matrice-depart/matrice-depart.component'
 import {ProfilListComponent} from './fiche-profil/profil-list/profil-list.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { FicheEvalComponent } from './evaluation/fiche-eval/fiche-eval.component';
 const routes: Routes = [
   {
     path: '', component: HomeComponent,
@@ -49,9 +49,6 @@ const routes: Routes = [
         path: 'moyens',
         component: MoyensComponent ,
       },
-      {path: 'fihceEvaluation/:cin',
-      component: FicheEvaluationComponent,
-      },
      { 
        path: 'evaluation',
       component: EvaluationComponent,},
@@ -74,6 +71,10 @@ const routes: Routes = [
       {
         path : 'listeProfil',
         component: ProfilListComponent,
+      },
+      {
+        path: 'ficheEval/:cin',
+        component: FicheEvalComponent
       }
     ]
   },

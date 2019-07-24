@@ -28,6 +28,9 @@ export class SavoirService {
   return this.httpClient.get<any[]>(this.apiUrl+'/Savoirs/'+ type); 
 }
 
+public getSavoirByibelle(libelle: string){
+  return this.httpClient.get<any>(this.apiUrl+'/Savoirss/'+libelle);
+}
 public getSavoirById (idSv:number){
   return this.httpClient.get<any>(this.apiUrl + '/Savoir' + idSv);
 }
